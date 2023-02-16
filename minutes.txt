@@ -1,0 +1,8 @@
+16.02.2023
+----------
+
+* Selma ve Alperen iş bölümü ve tanımını yapacak
+* Yazıda kullanabilmek için uygulama senaryoları düşünülecek. Bu işi niye yaptık? Bu uygulama ne işe yarayacak? gibi soruların cevaplarını vermemiz lazım.
+* Yukardaki sorulara cevap veren benzer işler related works kısmına gidecek. (elicit'e bakmayı unutmayalım.)
+* Deployment için alternatifler araştırılacak (streamlit pratik ama elimizde django'yla yazılmış bir şeyler zaten var. Onu beautify edip, cloud'da bir yere deploy etsek daha mı iyi olur diye bakılacak.)
+* PubMed sonuçlarından yazıların metnine nasıl ulaşılır diye araştırılacak. Farklı dergilerin spesifik şablonlarına dayalı wrapper tarzı bir çözüm uygulanabilir belki.
