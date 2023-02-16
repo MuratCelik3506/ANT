@@ -6,3 +6,32 @@
 * Yukardaki sorulara cevap veren benzer işler related works kısmına gidecek. (elicit'e bakmayı unutmayalım.)
 * Deployment için alternatifler araştırılacak (streamlit pratik ama elimizde django'yla yazılmış bir şeyler zaten var. Onu beautify edip, cloud'da bir yere deploy etsek daha mı iyi olur diye bakılacak.)
 * PubMed sonuçlarından yazıların metnine nasıl ulaşılır diye araştırılacak. Farklı dergilerin spesifik şablonlarına dayalı wrapper tarzı bir çözüm uygulanabilir belki.
+
+#####
+Tasks
+#####
+
+Job #   Tasks                                           Responsible
+-----   ------------------------------------------      ----------------------
+  1     Cleanup the search results to include only      Alperen
+        papers related to FMF we are interested in
+-----   ------------------------------------------      ----------------------
+  2     How to get the full text from the links         Alperen, Murat
+-----   ------------------------------------------      ----------------------
+  3     Application scenario ideas                      Alperen, Murat, Selma
+-----   ------------------------------------------      ----------------------
+  4     Find deployment alternatives                    Alperen, Murat  
+-----   ------------------------------------------      ----------------------
+  5     Related work                                    Selma  
+-----   ------------------------------------------      ----------------------
+  6     Cleanup 2: missing DOIs, missing keywords,      Alperen
+        missing links to full text
+
+########
+Progress
+########
+
+Job #   What has been done so far?              Remaining tasks
+-----   ----------------------------------      ----------------------------------
+  1     Done                                    -
+-----   ----------------------------------      ----------------------------------
