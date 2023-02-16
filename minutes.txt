@@ -25,7 +25,7 @@ Job #   Tasks                                           Responsible
   5     Related work                                    Selma  
 -----   ------------------------------------------      ----------------------
   6     Cleanup 2: missing DOIs, missing keywords,      Alperen
-        missing links to full text
+        missing links to full text, redirections
 
 ########
 Progress
