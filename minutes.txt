@@ -1,3 +1,11 @@
+23.02.2023
+----------
+
++ Deployment decision: Huggingface + Streamlit -> Murat büyük pkl dosyalarını deploy etmeyi deneyecek
+
+- Not: Bir makaleye soru soruyoruz. Cevap geliyor ama şu makaleye de göz atmak isteyebilirsin gibi bir öneri eklenebilir mi?
+
+
 16.02.2023
 ----------
 
