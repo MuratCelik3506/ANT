@@ -39,7 +39,69 @@ Job #   Tasks                                           Responsible
 Progress
 ########
 
-Job #   What has been done so far?              Remaining tasks
+Job #   What has been done so far?              Remaining Tasks
 -----   ----------------------------------      ----------------------------------
   1     Done                                    -
 -----   ----------------------------------      ----------------------------------
+  2     Crawling bot blocked, must try sth      All
+        else                                        
+-----   ----------------------------------      ----------------------------------
+  3     Murat assessed elicit (see notes)       More ideas needed                                    
+-----   ----------------------------------      ----------------------------------
+  4     Done: Huggingface + Streamlit           -
+-----   ----------------------------------      ----------------------------------
+  5     Half-way through                        Continues           
+-----   ----------------------------------      ----------------------------------
+  6                                             All
+-----   ----------------------------------      ----------------------------------
+
+#####
+Notes
+#####
+
+Elicit evaluation by Murat:
+
+Elicit konusunda biraz daha detaylı baktım. Kapsamı çok geniş. Nisan 2022'de çıkmış. Eğer düşündüklerini yaparlarsa ilerde popülerliği çok fazla artabilir. Şu an kendileri de biraz temkinli yaklaşıyor. Sonuçların güvenilirliğini garantilemiyorlar. Ama diğer arama araçlarına göre farklı olduklarını da söylüyorlar.
+
+Elicit İncelemesi:
+
+	1) PDF dosyasından tüm içeriği çeker.
+	2) İçeriğin özetini çıkarır.
+	3) İçerik hakkında soru sorulabilir. İçerikte soruyla ilgili metin bulunur. O soruya uygun olarak metin cümleleştirilerek cevap dönülür. Bulunan metin ana ve yardımcı olarak da öne çıkartılır.
+	4) Verilen girdi ifadesine göre tanım cümleleri önerir.
+	5) Verilen girdi ifadesi ile ilgili beyin fırtınası amaçlı sorular üretir.
+	6) Verilen girdi sorusuyla ilgili literatür taraması
+	7) Aranılan konuda çıkan makalelerde özel kolonlar ekleme şansı
+	8) Verilen cümleyi farklı kelimeler ile yeniden yazıyor.
+	9) abstract özetleme
+	10)bir konu yazılıyor. O konuda öneriler çıkartılıyor. "image generation" yazdım. Magenta isminde bir şerket önerdi, Microsoft'un bir projesini söyledi. Bir veri seti seçmekle başla dedi. Bunları üretiyor mu yoksa öneri listesinden çekip yayınlıyor mu onu anlamadım.
+	11)Bir konu veriliyor. Onunla ilgili çeşitli sorular çıktısı veriliyor.
+ve daha fazlası
+
+
+Elicit Neden farklı?
+	1) Find relevant papers even if they don't match keywords.
+	Makale önerilerini anahtar kelimeler ile değil anlam benzerlikleri(semantic similarity) ile yapıyor.“meditation” konulu aramada o kelime geçmeyen ama “mindfulness.” kelimesinin geçtiği makaleleri dönebilir.
+	2) Combine the breadth of semantic similarity with the precision of keyword matching.
+	3) Read summaries of abstracts specific to your query.
+	Burada özetlemenin yanında sorulan soruya özel olan bir özetleme de kullanıyorlarmış.
+	4) Automatically search forwards and backwards in the citation graph to find more relevant papers.
+	Makale aramalarında eğer yıldızlanmış bir makale varsa aramayı graph üzerinden atıflara bakarak yapar. Bu da daha alakalı çıktılar veriyor.Research Rabbit, Connected Papers arama gereçlerinde de bu özellik varmış.
+	5) Customize what you see about the paper and organize papers by that information.
+	"population and intervention details, results of the study, publishing journal, and study type" gibi ifadeleri de makaleden çıkarıp sunuyorlar.
+	6) 
+Elicit Limitleri:
+	1) 2019'a kadar olan verilerle eğitilmiş.
+	2) Doğruluğu %80 olarak belirtiliyor. Yeni geliştirilen bir tool olduğu için %100 bir garanti vermiyorlar.
+	
+Elicit Kullandıkları:
+	1) Semantic Scholar API kullanır.
+	
+Çalışma Prensibi:
+	1) Gelen sorudaki stop wordler kaldırılır
+	2) Semantic Scholar API'dan 1000 makale çekilir.
+	2.1) Eğer makalelerden biri yıldızlanırsa o makalenin atıflarına göre graph üzerinden arama başlar.
+	3) GPT-3 kullanılarak rank işlemi yapılır.
+	4) 8 makale döner.
+	5) Makaleler üzerinde "GPT-3 Davinci model finetuned on roughly 2,000 examples of questions, abstracts, and takeaways." modeli çalışır.
+	6) ek kolonlar için "GPT-3 Davinci Instruct model" ve "fine-tuned Curie model" kullanılır.
